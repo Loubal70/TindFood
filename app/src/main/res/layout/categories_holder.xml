@@ -21,12 +21,14 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/img"
             android:layout_width="35dp"
             android:tint="@color/red"
             tools:src="@drawable/ic_chicken_food"
             android:layout_height="30dp" />
 
         <TextView
+            android:id="@+id/txt_title"
             android:layout_width="wrap_content"
             android:textColor="@color/red"
             android:textStyle="bold"
