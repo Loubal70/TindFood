@@ -4,7 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerCategories;
     RecyclerView recyclerItems;
+
+    // Pop-UP
+    Button popupBTN;
+    Dialog mDialog;
+
+    private TextView ingredientView;
+    private DatabaseManager databaseManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -23,6 +40,39 @@ public class MainActivity extends AppCompatActivity {
             recyclerItems = findViewById(R.id.recycler_nourriture);
             setCategories();
             setItem(0);
+
+
+            // POP-UP
+            ingredientView = (TextView) findViewById( R.id.textView5 );
+            databaseManager = new DatabaseManager( this );
+
+             //databaseManager.insertingredient("name", "ingredient");
+
+            List<Data> ingredient = databaseManager.read();
+
+            for (Data ingredients : ingredient){
+                ingredientView.append(ingredient.toString() + "\n\n");
+                Log.e("pd", "pd effectué");
+            }
+
+
+
+
+            databaseManager.close(); // Ferme l'accès à la BDD
+
+            popupBTN = findViewById(R.id.popupBTN);
+            mDialog = new Dialog(this);
+            popupBTN.setOnClickListener(v -> {
+                mDialog.setContentView(R.layout.popup);
+
+                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                mDialog.show();
+
+                Log.e( "POPUP", "Click effectué");
+
+            });
+
     }
 
 
