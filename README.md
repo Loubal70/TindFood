@@ -9,7 +9,7 @@
 
 ## À propos
 
-Ce projet a été réalisé dans le cadre de la fin d'année des MMI à Lens ! Le but fut de créer sa propre agence ayant pour tache de faire la promotion d'un événement créé par nos soins.
+TindFood est une application qui se veut simple d'utilisation (on a pas les compétences pour faire quelques choses de compliqués, oupsi). Notre but, diffuser de façon décaler des recettes de cuisines variées (Pizza, Poulet, Burger --> only dispo #noHealty)
 
 ## Installation
 
