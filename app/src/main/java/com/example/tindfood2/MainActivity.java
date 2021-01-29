@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
             for (Data ingredients : ingredient){
                 ingredientView.append(ingredient.toString() + "\n\n");
-                Log.e("pd", "pd effectué");
+                Log.e("pd", "Ingrédient effectué");
             }
 
 
@@ -61,17 +62,25 @@ public class MainActivity extends AppCompatActivity {
             databaseManager.close(); // Ferme l'accès à la BDD
 
             popupBTN = findViewById(R.id.popupBTN);
-            mDialog = new Dialog(this);
-            popupBTN.setOnClickListener(v -> {
-                mDialog.setContentView(R.layout.popup);
+        popupBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent productdetails = new Intent(getApplicationContext(), Productdetails.class);
+                startActivity(productdetails);
+                finish();
+            }
+        });
+           //mDialog = new Dialog(this);
+            //popupBTN.setOnClickListener(v -> {
+              //  mDialog.setContentView(R.layout.popup);
 
-                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                //mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-                mDialog.show();
+                //mDialog.show();
 
-                Log.e( "POPUP", "Click effectué");
+                //Log.e( "POPUP", "Click effectué");
 
-            });
+            //});
 
     }
 
@@ -134,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Adapter Adapter = new Adapter(Item);
+
         recyclerItems.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL, false));
 
         recyclerItems.setAdapter(Adapter);

@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">TindFood2</string>
+    <string name="homescreenloader">HomeScreenLoader</string>
+    <string name="notificiation_channel_id">mychannal</string>
+    <string name="notification_channel_title">MyTitle</string>
+    <string name="notification_channel_desc">Test Description</string>
+    <string name="retour">Retour</string>
+    <string name="produit">Produit</string>
+    <string name="_1">1</string>
+    <string name="pizza">Pizza</string>
+    <string name="promotion">Promotion</string>
+    <string name="prix">14 €</string>
+    <string name="titre_desc_produit">Pizza maison</string>
+    <string name="big_desc_produit">Gouter à l\'italie, avec notre pizza fraichement inventée par nos cuisiniers. Une pâte brisée, 500g de jambon, 3 tomates coupés en tranches, quelques olives, avec sa touche de fromage. De quoi vous donnez envie !</string>
+    <string name="add_to_cart">Ajouter au panier</string>
+    <string name="moins">moins</string>
+    <string name="plus">plus</string>
+    <string name="logo_app">Logo app</string>
 </resources>
