@@ -13,7 +13,7 @@
         android:adjustViewBounds="false"
         android:contentDescription="@string/homescreenloader"
         android:scaleType="fitXY"
-        android:src="@drawable/page_d_accueil"
+        android:src="@drawable/splash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

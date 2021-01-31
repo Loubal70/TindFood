@@ -70,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-           //mDialog = new Dialog(this);
+           mDialog = new Dialog(this);
             //popupBTN.setOnClickListener(v -> {
-              //  mDialog.setContentView(R.layout.popup);
+            mDialog.setContentView(R.layout.popup);
 
-                //mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
                 //mDialog.show();
 
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         data.add(foodCategory2);
         data.add(foodCategory3);
 
-        CategoriesAdapter CategoriesAdapter = new CategoriesAdapter(data, MainActivity.this, new CategoriesAdapter.OnCategoryClick() {
+        CategoriesAdapter CategoriesAdapter = new CategoriesAdapter(data, MainActivity.this, new OnItemClick() {
             @Override
             public void onClick(int pos) {
                 setItem(pos);
@@ -142,7 +142,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        Adapter Adapter = new Adapter(Item);
+        Adapter Adapter = new Adapter(Item, position -> {
+            mDialog.show();
+        });
 
         recyclerItems.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL, false));
 
