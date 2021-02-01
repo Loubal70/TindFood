@@ -119,7 +119,8 @@
         android:layout_height="wrap_content"
         android:text="Appuie moi dessus !"
         app:layout_constraintStart_toStartOf="@+id/recycler_categories"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:visibility="invisible"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_nourriture"
