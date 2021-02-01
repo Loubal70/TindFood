@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="margin_top_img">60dp</dimen>
+    <dimen name="text_size">10.5dp</dimen>
+</resources>

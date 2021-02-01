@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.app.tindfood2"
+        applicationId 'fr.louisboulanger.tindfood'
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1

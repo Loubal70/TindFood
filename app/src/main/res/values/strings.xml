@@ -16,4 +16,12 @@
     <string name="moins">moins</string>
     <string name="plus">plus</string>
     <string name="logo_app">Logo app</string>
+    <string name="panier_valide">Panier valide</string>
+    <string name="shoping_place">Votre panier</string>
+    <string name="Desc_panier">Cette application est actuellement en construction, la commande n\'est pas encore disponible</string>
+    <string name="okay">J\'ai compris</string>
+    <string name="selectionelementpage2">SelectionElementPage2</string>
+    <string name="selectionelementpage3">SelectionElementPage3</string>
+    <string name="nextpage">NextPage</string>
+    <string name="selectionelementpage1">SelectionElementPage1</string>
 </resources>

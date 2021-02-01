@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash"
-    tools:context=".Productdetails">
+    tools:context="fr.louisboulanger.tindfood.Productdetails">
 
     <ImageView
         android:id="@+id/imageView"
@@ -31,8 +31,9 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="0dp"
-        android:layout_height="450dp"
+        android:layout_height="520dp"
         android:background="@drawable/detail_page_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,6 +104,7 @@
             android:layout_marginTop="24dp"
             android:fontFamily="@font/rubik"
             android:lineSpacingExtra="2dp"
+            android:textSize="@dimen/text_size"
             android:text="@string/big_desc_produit"
             android:textColor="@android:color/background_dark"
             app:layout_constraintEnd_toEndOf="@+id/textView12"
@@ -138,10 +140,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/plus"
+            android:onClick="onClick"
             app:layout_constraintBottom_toBottomOf="@+id/textView14"
             app:layout_constraintStart_toEndOf="@+id/textView14"
             app:layout_constraintTop_toTopOf="@+id/textView14"
-            app:srcCompat="@drawable/ic_plus" />
+            app:srcCompat="@drawable/ic_plus"
+            />
 
         <Button
             android:id="@+id/button2"
@@ -150,7 +154,7 @@
             android:background="@drawable/detail_page_cart_button_bg"
             android:drawableEnd="@drawable/ic_arrow_forward_black_24dp"
             android:fontFamily="@font/rubik_medium"
-            android:padding="16dp"
+            android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="@string/add_to_cart"
             android:textAllCaps="false"
@@ -163,16 +167,17 @@
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="256dp"
-        android:layout_height="447dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_img"
         android:adjustViewBounds="true"
         android:contentDescription="@string/produit"
         android:scaleType="fitCenter"
         android:transitionName="image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pizza_1" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/pizza_1"
+        tools:targetApi="lollipop" />
 
     <ImageView
         android:id="@+id/imageView4"

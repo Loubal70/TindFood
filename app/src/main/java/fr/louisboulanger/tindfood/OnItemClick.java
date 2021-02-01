@@ -1,4 +1,4 @@
-package com.app.tindfood2;
+package fr.louisboulanger.tindfood;
 
 public interface OnItemClick {
     void onClick(int position);

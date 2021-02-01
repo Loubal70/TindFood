@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
     android:background="@drawable/popup_bg"
-    tools:context=".DatabaseManager">
+    tools:context="fr.louisboulanger.tindfood.DatabaseManager">
 
     <ImageView
         android:id="@+id/photo"

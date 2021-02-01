@@ -1,0 +1,6 @@
+<resources>
+	<dimen name="size_title">40.6sp</dimen>
+	<dimen name="margin_top_img">40dp</dimen>
+	<dimen name="text_size">18.4dp</dimen>
+	<dimen name="height">1750dp</dimen>
+</resources>
