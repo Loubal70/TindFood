@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="350dp"
     android:layout_height="350dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
     android:background="@drawable/popup_bg"
-    tools:context="fr.louisboulanger.tindfood.DatabaseManager">
+    tools:context="com.appli.tindfood.tindfood2.DatabaseManager">
 
     <ImageView
         android:id="@+id/photo"
@@ -13,7 +14,8 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-        android:src="@drawable/ic_bake"/>
+        android:contentDescription="@string/image_ingr_dient"
+        app:srcCompat="@drawable/ic_bake" />
 
     <TextView
         android:id="@+id/nom_ingredient"
@@ -22,7 +24,7 @@
         android:layout_below="@+id/photo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-        android:text="Ingrédients :"
+        android:text="@string/ingr_dients"
         android:textSize="24sp"
         android:textColor="@color/black" />
 
