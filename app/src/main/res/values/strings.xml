@@ -24,4 +24,14 @@
     <string name="selectionelementpage3">SelectionElementPage3</string>
     <string name="nextpage">NextPage</string>
     <string name="selectionelementpage1">SelectionElementPage1</string>
+    <string name="ingr_dients">Ingrédients :</string>
+    <string name="image_ingr_dient">Image Ingrédient</string>
+    <string name="qu_est_qui_nous_ferait_plaisir">Qu\'est qui nous ferait plaisir ?</string>
+    <string name="choisis_ton_plat">Choisis ton plat</string>
+    <string name="recherche_un_plat_en_particulier">Recherche un plat en particulier</string>
+    <string name="cat_gories">Catégories</string>
+    <string name="choisis_ta_nourriture">Choisis ta nourriture</string>
+    <string name="appuie_moi_dessus">Appuie moi dessus !</string>
+    <string name="menu_icone">menu icone</string>
+    <string name="icone_users">Icone users</string>
 </resources>

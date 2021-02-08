@@ -1,5 +1,6 @@
 package com.appli.tindfood.tindfood2;
 
+import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -14,12 +15,15 @@ import com.appli.tindfood2.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import org.jetbrains.annotations.NotNull;
+
+@SuppressLint("MissingFirebaseInstanceTokenRefresh")
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String CANAL = "MyNotifCanal";
 
     @Override
-    public void onMessageReceived(RemoteMessage remoteMessage) {
+    public void onMessageReceived(@NotNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
         String myMessage = remoteMessage.getNotification().getBody();
