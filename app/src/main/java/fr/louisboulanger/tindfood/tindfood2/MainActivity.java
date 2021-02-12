@@ -1,4 +1,4 @@
-package com.appli.tindfood.tindfood2;
+package fr.louisboulanger.tindfood.tindfood2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerCategories = findViewById(R.id.recycler_categories);
         recyclerItems = findViewById(R.id.recycler_nourriture);
         setCategories();
-        setItem(0);
+        setItem("Burger");
 
 
         // POP-UP
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (Data ingredients : ingredient){
             ingredientView.append(ingredient.toString() + "\n\n");
-            Log.e("pd", "Ingrédient effectué");
+            Log.e("Indications", "Ingrédient effectué");
         }
 
 
@@ -94,17 +94,17 @@ public class MainActivity extends AppCompatActivity {
         data.add(foodCategory2);
         data.add(foodCategory3);
 
-        CategoriesAdapter CategoriesAdapter = new CategoriesAdapter(data, MainActivity.this, this::setItem);
+        CategoriesAdapter CategoriesAdapter = new CategoriesAdapter(data, MainActivity.this, pos -> setItem(pos.getName()));
 
         recyclerCategories.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL,false));
         recyclerCategories.setAdapter(CategoriesAdapter);
         CategoriesAdapter.notifyDataSetChanged();
     }
 
-    private void setItem(int pos){
+    private void setItem(String name){
         List<Item> Item = new ArrayList<>();
-        switch (pos){
-            case 2:
+        switch (name){
+            case "Pizza":
                 Item Item1 = new Item("Pizza 1", 4.5f, 8, R.drawable.pizza_1);
                 Item Item2 = new Item("Pizza 2", 2f, 10, R.drawable.pizza_2);
                 Item Item3 = new Item("Pizza 3", 3.5f, 11, R.drawable.pizza_3);
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 Item.add(Item4);
                 Item.add(Item5);
                 break;
-            case 1:
+            case "Poulet":
                 Item Item6 = new Item("Poulet 1", 4.5f, 4, R.drawable.grill_chicken_1);
                 Item Item7 = new Item("Poulet 2", 2f, 6, R.drawable.grill_chicken_2);
                 Item Item8 = new Item("Poulet 3", 3.5f, 8, R.drawable.grill_chicken_3);
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 Item.add(Item7);
                 Item.add(Item8);
                 break;
-            case 0:
+            case "Burger":
                 Item Item9 = new Item("Burger 1", 4.5f, 7, R.drawable.burger);
                 Item Item10 = new Item("Burger 2", 2f, 9, R.drawable.burger_two);
 
@@ -135,9 +135,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        Adapter Adapter = new Adapter(Item, position -> {
+        Adapter Adapter = new Adapter(Item, item -> {
             //mDialog.show();
             Intent productdetails = new Intent(getApplicationContext(), Productdetails.class);
+            productdetails.putExtra("name", item.getName());
+            productdetails.putExtra("price", item.getPrice()+ " €");
+            productdetails.putExtra("image", item.getImage());
             startActivity(productdetails);
             finish();
         });

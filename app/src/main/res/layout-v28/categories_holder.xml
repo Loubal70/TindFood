@@ -25,7 +25,7 @@
             android:id="@+id/img"
             android:layout_width="35dp"
             android:layout_height="30dp"
-            android:contentDescription="Img Catégory"
+            android:contentDescription="@string/img_cat_gory"
             tools:src="@drawable/ic_chicken_food"
             app:tint="@color/red" />
 

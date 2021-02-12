@@ -1,4 +1,4 @@
-package com.appli.tindfood.tindfood2;
+package fr.louisboulanger.tindfood.tindfood2;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -25,9 +25,9 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
     Context context;
     int selectedItem = 0;
 
-    OnItemClick onCategoryClick;
+    OnItemClick <Categories> onCategoryClick;
 
-    public CategoriesAdapter(List<Categories> data, Context context, OnItemClick onCategoryClick){
+    public CategoriesAdapter(List<Categories> data, Context context, OnItemClick <Categories> onCategoryClick){
         this.data = data;
         this.context = context;
         this.onCategoryClick = onCategoryClick;
@@ -82,7 +82,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
                 selectedItem = getAdapterPosition();
                 // Reset items, Couleur change quand je clic
                 if (onCategoryClick != null){
-                    onCategoryClick.onClick(getAdapterPosition());
+                    onCategoryClick.onClick(data.get(getAdapterPosition()));
                 }
                 notifyDataSetChanged();
             });

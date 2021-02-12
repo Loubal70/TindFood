@@ -1,4 +1,4 @@
-package com.appli.tindfood.tindfood2;
+package fr.louisboulanger.tindfood.tindfood2;
 
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -19,11 +19,11 @@ import java.util.List;
 
 public class Adapter extends  RecyclerView.Adapter<Adapter.FoodHolder>{
 
-    private final OnItemClick onItemClick;
+    private final OnItemClick <Item> onItemClick;
     List<Item> data ;
     int selectedItem = 0;
 
-    public Adapter(List<Item> data, OnItemClick onItemClick){
+    public Adapter(List<Item> data, OnItemClick <Item> onItemClick){
         this.data = data;
         this.onItemClick = onItemClick;
     }
@@ -89,7 +89,7 @@ public class Adapter extends  RecyclerView.Adapter<Adapter.FoodHolder>{
                 @Override
                 public void onClick(View view) {
                     selectedItem = getAdapterPosition();
-                    if (onItemClick != null) onItemClick.onClick(selectedItem);
+                    if (onItemClick != null) onItemClick.onClick(data.get(selectedItem));
                     notifyDataSetChanged();
                 }
             });

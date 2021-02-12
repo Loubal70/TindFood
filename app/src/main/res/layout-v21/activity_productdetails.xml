@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash"
-    tools:context="com.appli.tindfood.tindfood2.Productdetails">
+    tools:context="fr.louisboulanger.tindfood.tindfood2.Productdetails">
 
     <ImageView
         android:id="@+id/imageView"
@@ -140,7 +140,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/plus"
-            android:onClick="onClick"
             app:layout_constraintBottom_toBottomOf="@+id/textView14"
             app:layout_constraintStart_toEndOf="@+id/textView14"
             app:layout_constraintTop_toTopOf="@+id/textView14"

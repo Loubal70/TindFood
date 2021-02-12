@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.appli.tindfood2">
 
     <application
@@ -9,21 +10,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TindFood2">
-        <activity android:name="com.appli.tindfood.tindfood2.Productdetails" />
-        <activity android:name="com.appli.tindfood.tindfood2.SplashScreenActivity">
+        <activity android:name="fr.louisboulanger.tindfood.tindfood2.slide_screen" />
+
+        <activity android:name="fr.louisboulanger.tindfood.tindfood2.Productdetails"
+            android:parentActivityName="fr.louisboulanger.tindfood.tindfood2.MainActivity">
+                <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="fr.louisboulanger.tindfood.tindfood2.MainActivity" />
+        </activity>
+
+        <activity android:name="fr.louisboulanger.tindfood.tindfood2.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.appli.tindfood.tindfood2.MainActivity" />
-        <service android:name="com.appli.tindfood.tindfood2.MyFirebaseMessagingService">
+
+        <activity android:name="fr.louisboulanger.tindfood.tindfood2.MainActivity" />
+
+        <service android:name="fr.louisboulanger.tindfood.tindfood2.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>

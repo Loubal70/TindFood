@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/homepage___2"
     android:clipChildren="false"
-    tools:context="com.appli.tindfood.tindfood2.MainActivity">
+    tools:context="fr.louisboulanger.tindfood.tindfood2.MainActivity">
 
     <!-- ClipChildren : Permet que l'animation du slider de catégories ne se coupe pas -->
 

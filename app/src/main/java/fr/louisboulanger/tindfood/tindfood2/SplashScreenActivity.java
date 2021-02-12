@@ -1,4 +1,4 @@
-package com.appli.tindfood.tindfood2;
+package fr.louisboulanger.tindfood.tindfood2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
