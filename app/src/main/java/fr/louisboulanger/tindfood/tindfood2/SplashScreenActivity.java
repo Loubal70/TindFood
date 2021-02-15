@@ -6,14 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import static com.appli.tindfood2.R.layout.activity_splash_screen;
-
 public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_splash_screen);
+        setContentView(R.layout.activity_splash_screen);
 
         Runnable runnable = () -> {
             // Rediriger vers page principal après 3 secondes

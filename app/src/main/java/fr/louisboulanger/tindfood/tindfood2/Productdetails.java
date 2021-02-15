@@ -11,10 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.appli.tindfood2.R;
-
-import static com.appli.tindfood2.R.*;
-
 public class Productdetails extends AppCompatActivity {
 
     private ImageView imageView;
@@ -22,29 +18,32 @@ public class Productdetails extends AppCompatActivity {
 
     ImageView imageView2;
     TextView Itemname, ItemPrice, ItemDescription;
-    String name, price;
+    String name, price, description;
     int imageUrl;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_productdetails);
+        setContentView(R.layout.activity_productdetails);
 
         Intent productdetails = getIntent();
         name = productdetails.getStringExtra("name");
         price = productdetails.getStringExtra("price");
         imageUrl = productdetails.getIntExtra("image", -1);
+        description = productdetails.getStringExtra("description");
 
         Itemname = findViewById(R.id.textView11);
         ItemPrice = findViewById(R.id.textView12);
         imageView2 = findViewById(R.id.imageView7);
+        ItemDescription = findViewById(R.id.textView13);
 
         Itemname.setText(name);
         ItemPrice.setText(price);
         imageView2.setImageResource(imageUrl);
+        ItemDescription.setText(description);
 
-        this.imageView = (ImageView) findViewById(id.imageView);
+        this.imageView = (ImageView) findViewById(R.id.imageView);
 
         imageView.setOnClickListener(v -> {
             Intent mainpage = new Intent(getApplicationContext(), MainActivity.class);

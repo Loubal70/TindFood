@@ -4,14 +4,16 @@ public class Item {
 
     private String name;
     private float rating;
-    private int price;
+    private String price;
     private int image;
+    private String description;
 
-    public Item(String name, float rating, int price, int image) {
+    public Item(String name, float rating, String price, int image, String description) {
         this.name = name;
         this.rating = rating;
         this.price = price;
         this.image = image;
+        this.description = description;
     }
 
     public String getName() {
@@ -30,12 +32,20 @@ public class Item {
         this.rating = rating;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getImage() {

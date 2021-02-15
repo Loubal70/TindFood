@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.appli.tindfood2.R;
-
-
 public class slide_screen extends AppCompatActivity {
 
     private Button btnGetStarted;

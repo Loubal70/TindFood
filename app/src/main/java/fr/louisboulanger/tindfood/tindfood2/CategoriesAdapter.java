@@ -14,7 +14,6 @@ import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.appli.tindfood2.R;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;

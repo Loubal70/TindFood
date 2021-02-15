@@ -1,5 +1,6 @@
 package fr.louisboulanger.tindfood.tindfood2;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.appli.tindfood2.R;
 
 import java.util.List;
 
@@ -38,23 +38,24 @@ public class Adapter extends  RecyclerView.Adapter<Adapter.FoodHolder>{
         return new FoodHolder(view);
     }
 
+    @SuppressLint("DefaultLocale")
     @Override
     public void onBindViewHolder(@NonNull FoodHolder holder, int position) {
-        holder.price.setText(String.format("%d €", data.get(position).getPrice()));
+        holder.price.setText(data.get(position).getPrice());
         holder.image.setImageResource(data.get(position).getImage());
         holder.title.setText(data.get(position).getName());
         holder.ratingBar.setRating(data.get(position).getRating());
 
         if (selectedItem == position){
-            holder.cardView.animate().scaleX(1.1f);
-            holder.cardView.animate().scaleY(1.1f);
+            holder.cardView.animate().scaleX(1f);
+            holder.cardView.animate().scaleY(1f);
             holder.title.setTextColor(Color.WHITE);
             holder.price.setTextColor(Color.WHITE);
             holder.item_bg.setBackgroundResource(R.drawable.splash);
         }
         else{
-            holder.cardView.animate().scaleX(1f);
-            holder.cardView.animate().scaleY(1f);
+            holder.cardView.animate().scaleX(0.9f);
+            holder.cardView.animate().scaleY(0.9f);
             holder.title.setTextColor(Color.GRAY);
             holder.price.setTextColor(Color.GRAY);
             holder.item_bg.setBackgroundResource(R.color.white);

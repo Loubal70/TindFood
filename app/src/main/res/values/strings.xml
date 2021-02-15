@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TindFood2</string>
+    <string name="app_name">TindFood</string>
     <string name="homescreenloader">HomeScreenLoader</string>
     <string name="notificiation_channel_id">mychannal</string>
     <string name="notification_channel_title">MyTitle</string>
@@ -35,4 +35,13 @@
     <string name="menu_icone">menu icone</string>
     <string name="icone_users">Icone users</string>
     <string name="img_cat_gory">Img Catégory</string>
+    <string name="accueil">Accueil</string>
+    <string name="Paramètres">Parametres</string>
+    <string name="description">Votre application nutritive</string>
+    <string name="profil">Profil</string>
+    <string name="informations">Informations</string>
+
+    <string name="navigation_drawer_open">Le menu est ouvert</string>
+    <string name="navigation_drawer_close">Le menu est fermé</string>
+
 </resources>
