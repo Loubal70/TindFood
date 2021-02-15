@@ -1,5 +1,6 @@
 package fr.louisboulanger.tindfood.tindfood2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,6 +14,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -20,7 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     DrawerLayout drawerLayout;
@@ -43,16 +45,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /* -------------------------------- DrawerLayout -------------------------------- */
-            drawerLayout = findViewById(R.id.drawer_layout);
-            navigationView = findViewById(R.id.nav_view);
-            toolbar = findViewById(R.id.toolbar);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
 
         /* ------------------------------- Navigation View ------------------------------ */
         setSupportActionBar(toolbar);
         /* -------------------------------- Navigation Drawer Menu -------------------------------- */
+        navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
 
         recyclerCategories = findViewById(R.id.recycler_categories);
         recyclerItems = findViewById(R.id.recycler_nourriture);
@@ -61,19 +66,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         // POP-UP
-        ingredientView = (TextView) findViewById( R.id.textView5 );
-        databaseManager = new DatabaseManager( this );
+        ingredientView = (TextView) findViewById(R.id.textView5);
+        databaseManager = new DatabaseManager(this);
 
         //databaseManager.insertingredient("name", "ingredient");
 
         List<Data> ingredient = databaseManager.read();
 
-        for (Data ingredients : ingredient){
+        for (Data ingredients : ingredient) {
             ingredientView.append(ingredient.toString() + "\n\n");
             Log.e("Indications", "Ingrédient effectué");
         }
-
-
 
 
         databaseManager.close(); // Ferme l'accès à la BDD
@@ -104,9 +107,9 @@ public class MainActivity extends AppCompatActivity {
     private void setCategories() {
         List<Categories> data = new ArrayList<>();
 
-        Categories foodCategory = new Categories("Burger",R.drawable.ic_burger_food);
-        Categories foodCategory2 = new Categories("Poulet",R.drawable.ic_chicken_food);
-        Categories foodCategory3 = new Categories("Pizza",R.drawable.ic_pizza_food);
+        Categories foodCategory = new Categories("Burger", R.drawable.ic_burger_food);
+        Categories foodCategory2 = new Categories("Poulet", R.drawable.ic_chicken_food);
+        Categories foodCategory3 = new Categories("Pizza", R.drawable.ic_pizza_food);
 
         data.add(foodCategory);
         data.add(foodCategory2);
@@ -114,14 +117,14 @@ public class MainActivity extends AppCompatActivity {
 
         CategoriesAdapter CategoriesAdapter = new CategoriesAdapter(data, MainActivity.this, pos -> setItem(pos.getName()));
 
-        recyclerCategories.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL,false));
+        recyclerCategories.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL, false));
         recyclerCategories.setAdapter(CategoriesAdapter);
         CategoriesAdapter.notifyDataSetChanged();
     }
 
-    private void setItem(String name){
+    private void setItem(String name) {
         List<Item> Item = new ArrayList<>();
-        switch (name){
+        switch (name) {
             case "Pizza":
                 Item Item1 = new Item("Pizza 1", 4.5f, "8", R.drawable.pizza_1, "Gouter à l'italie, avec notre pizza fraîchement inventée par nos cuisiniers. Une pâte brisée, 500g de jambon, 3 tomates coupés en tranches, quelques olives, avec sa touche de fromage. De quoi vous donnez envie !");
                 Item Item2 = new Item("Pizza 2", 2f, "10", R.drawable.pizza_2, "Pate Feuilleté à l'ancienne, 200g de poivron, une poignée de tomate cerise, 500g de champignon pendant 30 min à 180° et le tour est joué !");
@@ -157,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
             //mDialog.show();
             Intent productdetails = new Intent(getApplicationContext(), Productdetails.class);
             productdetails.putExtra("name", item.getName());
-            productdetails.putExtra("price", item.getPrice()+ " €");
+            productdetails.putExtra("price", item.getPrice() + " €");
             productdetails.putExtra("image", item.getImage());
             productdetails.putExtra("description", item.getDescription());
             startActivity(productdetails);
@@ -169,4 +172,21 @@ public class MainActivity extends AppCompatActivity {
         recyclerItems.setAdapter(Adapter);
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        switch (menuItem.getItemId()) {
+            case R.id.nav_home:
+                break;
+            case R.id.nav_settings:
+                Intent productdetails = new Intent(getApplicationContext(), slide_screen.class);
+                startActivity(productdetails);
+                finish();
+                break;
+
+        }
+
+
+        return true;
+    }
 }
