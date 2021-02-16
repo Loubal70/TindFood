@@ -45,19 +45,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         /* -------------------------------- DrawerLayout -------------------------------- */
-        drawerLayout = findViewById(R.id.drawer_layout);
+        /*  drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
 
         /* ------------------------------- Navigation View ------------------------------ */
-        setSupportActionBar(toolbar);
+       /* setSupportActionBar(toolbar);
         /* -------------------------------- Navigation Drawer Menu -------------------------------- */
-        navigationView.bringToFront();
+       /* navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        toggle.syncState(); */
 
-        navigationView.setNavigationItemSelectedListener(this);
+        /* navigationView.setNavigationItemSelectedListener(this); */
 
         recyclerCategories = findViewById(R.id.recycler_categories);
         recyclerItems = findViewById(R.id.recycler_nourriture);
